@@ -1,6 +1,7 @@
 Typing
 ======
 
+## Basics
 
 All the theoretical knowledge to learn typing is to know which finger goes to
 each key. The rest is training and dicipline to keep the right finger over the
@@ -9,7 +10,7 @@ right key.
 
 ![](typing-fingers.png)
 
-## traning
+## Advanced
 
 * [typing-cat](http://thetypingcat.com) - seems to be the best option.
 
