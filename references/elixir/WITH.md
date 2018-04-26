@@ -91,6 +91,96 @@ end
 
 
 
+Instead of this:
+
+```elixir
+defp serve(socket) do
+  msg =
+    case read_line(socket) do
+      {:ok, data} ->
+        case KVServer.Command.parse(data) do
+          {:ok, command} ->
+            KVServer.Command.run(command)
+          {:error, _} = err ->
+            err
+        end
+      {:error, _} = err ->
+        err
+    end
+
+  write_line(socket, msg)
+  serve(socket)
+end
+```
+
+See how beautiful is this:
+
+```elixir
+defp serve(socket) do
+  msg =
+    with {:ok, data} <- read_line(socket),
+         {:ok, command} <- KVServer.Command.parse(data),
+         do: KVServer.Command.run(command)
+
+  write_line(socket, msg)
+  serve(socket)
+end
+```
+
+
+But because the `msg` is unexpected, we should cover all possible returns:
+
+```elixir
+defp serve(socket) do
+  msg =
+    with {:ok, data} <- read_line(socket),
+         {:ok, command} <- KVServer.Command.parse(data),
+         do: KVServer.Command.run(command)
+
+  case msg do
+    {:ok, value} -> # The whole chain succeeded
+      write_line(socket, msg)
+
+    {:error, :read_line, error} -> # Bailed out in `read_line/1`
+      Log.error "Bad read_line/1 from socket #{inspect(socket)}"
+
+    {:error, :command_parse, error} ->
+      Log.error "Can't parse response #{inspect(data)}"
+      do_something_with(error)
+
+    unexpected ->
+      Log.error "Got unexpected value #{inspect(unexpected)}"
+  end
+
+  serve(socket)
+end
+```
+
+
+but from Elixir 1.3
+
+```elixir
+defp serve(socket) do
+  with {:ok, data} <- read_line(socket),
+       {:ok, command} <- KVServer.Command.parse(data),
+       {:ok, msg} <- KVServer.Command.run(command) do
+    write_line(socket, msg)
+  else
+    {:error, :read_line, error} -> # Bailed out in `read_line/1`
+      Log.error "Bad read_line/1 from socket #{inspect(socket)}"
+
+    {:error, :command_parse, error} -> # Bailed in ...Command.parse/1
+      Log.error "Can't parse response #{inspect(data)}"
+      do_something_with(error)
+
+    unexpected ->
+      Log.error "Got unexpected value #{inspect(unexpected)}"
+  end
+
+  serve(socket)
+end
+```
+
 
 
 
@@ -103,4 +193,5 @@ end
 
 * https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html
 * http://openmymind.net/Elixirs-With-Statement/
-
+* http://relistan.com/elixir-thoughts-on-the-with-statement/
+* http://learningelixir.joekain.com/learning-elixir-with/
