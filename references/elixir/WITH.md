@@ -1,5 +1,8 @@
+With
+====
 
 
+## Basics
 
 We start with using the with keyword and the first assignment on the first line. I wanted to make that pretty and indent it underneath with, but that’s not OK.
 
@@ -187,9 +190,7 @@ end
 
 ## Advanced
 
-*
-[error-handling](https://medium.com/elixir-magic/making-error-handling-a-breeze-with-with-operator-in-elixir-1-2-93d611a878e)
-- use WITH and pattern matching to make railway oriented programming
+See our `error handling` section for more examples.
 
 * https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html
 * http://openmymind.net/Elixirs-With-Statement/
