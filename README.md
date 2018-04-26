@@ -18,6 +18,7 @@ Elixir in a Team
   * [specs](references/elixir/SPECS.md) - type specifications for your functions.
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
+  * [pipes](references/elixir/PIPES.md) - many options on how to use them
 
 ### Phoenix
 

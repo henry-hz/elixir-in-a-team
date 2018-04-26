@@ -1,5 +1,27 @@
 Error Handling
 ==============
+Although more common to return the {:error, reason} tuple, Elixir supports exceptions and in this lesson we’ll look at how to handle errors and the different mechanisms available to us.
+
+In general the convention in Elixir is to create a function (example/1) which returns {:ok, result} and {:error, reason} and a separate function (example!/1) that returns the unwrapped result or raises an error.
+
+The Elixir way is to use the pipe and `with` where each is more suitable for the task. So if you need to write a sequence of function calls where some or all are expected to return an error, `with` would be the most appropriate tool to use.
+
+One key difference between a pipeline and `with` is that the latter stops evaluation as soon as it encounters the first failed match. Whereas with a pipeline you'd have to wrap all constituent functions to pass the error from a previous step down to the next one. I see it as a downside to trying to use the pipe in places where it is more important to explicitly handle errors.
+
+The pipe operator is great when all functions are acting on a consistent piece of data. It falls apart when we introduce variability. That's where with comes in. with is a lot like a |> except that it allows you to match each intermediary result.
+
+
+If you are building a library, see
+[this](http://michal.muskala.eu/2017/02/10/error-handling-in-elixir-libraries.html)
+article. 
+
+Anyway, it's important to differentiate between two kinds of error:
+
+*actionable errors* - i.e. expected errors. When those happen we need to handle them gracefully, so that our application can continue working correctly. A good example of this is invalid data provided by the user or data not present in the database. In general we want to handle this kind of errors by using tuple return values ({:ok, value} | {:error, reason}) - the consumer can match on the value and act on the result.
+
+*fatal errors* - errors that place our application in undefined state - violate some system invariant, or make us reach a point of no return in some other way. A good example of this is a required config file not present or a network failing in the middle of transmitting a packet. With that kind of errors we usually want to crash and lean on the supervision system to recover - we handle all errors of this kind in a unified way. That’s exactly what the let it crash philosophy is about - it’s not about letting our application burn in case of any errors, but avoiding excessive code for handling errors that can’t be handled gracefully. You can read more about what the “let it crash” means in the excellent article by Fred Hebert of the “Learn You Some Erlang for Great Good” fame - “The Zen of Erlang”.
+
+
 
 ## Basics
 
@@ -20,7 +42,8 @@ If receive_image returns an error,  resize needs to handle it
 def resize({:error, _}=error), do:error
 ```
 
-and to propagate it down through the pipe. So rotate needs to do the same, etc..
+and to propagate it down through the pipe. So rotate needs to do the same, etc...
+
 
 
 
@@ -140,5 +163,5 @@ Using throw and catch is good for the newbies Ruby guys only, it consumes a lot 
 * https://elixirschool.com/en/lessons/advanced/error-handling/
 * https://elixir-lang.org/getting-started/try-catch-and-rescue.html
 * https://dzone.com/articles/error-handling-strategies
-*
+* http://michal.muskala.eu/2017/02/10/error-handling-in-elixir-libraries.html
 

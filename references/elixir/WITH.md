@@ -34,3 +34,73 @@ else
     {:error, :wrong_data}
 end
 ```
+
+Below is an example that we will rewrite with more flexibility, using `with`
+
+```elixir
+defmodule User do
+  defstruct name: nil, dob: nil
+
+  def create(params) do
+   %User{}
+      |> parse_dob(params["dob"])
+      |> parse_name(params["name"])
+  end
+
+  defp parse_dob(user, nil), do: {:error, "dob is required"}
+  defp parse_dob(user, dob) when is_integer(dob), do: %{user | dob: dob}
+  defp parse_dob(_user, _invalid), do: {:error "dob must be an integer"}
+
+  defp parse_name(_user, {:error, _} = err), do: err
+  defp parse_name(user, nil), do: {:error, "name is required"}
+  defp parse_name(user, ""), do: parse_name(user, nil)
+  defp parse_name(user, name), do: %{user | name: name}
+
+end
+```
+
+The problem with this approach is that every function in the chain needs to handle the case where any function before it returned an error. It's clumsy, both because it isn't pretty and because it isn't flexible. Any new return type that we introduced has to be handled by all functions in the chain.
+
+The pipe operator is great when all functions are acting on a consistent piece of data. It falls apart when we introduce variability. That's where with comes in. with is a lot like a |> except that it allows you to match each intermediary result.
+
+Let's rewrite our code:
+
+```elixir
+defmodule User do
+  defstruct name: nil, dob: nil
+	def create(params) do
+		with {:ok, dob} <- parse_dob(params["dob"]),
+				 {:ok, name} <- parse_name(params["name"])
+		do
+			%User{dob: dob, name: name}
+		else
+			# nil -> {:error, ...} an example that we can match here too
+			err -> err
+		end
+	end
+
+  defp parse_dob(nil), do: {:error, "dob is required"}
+  defp parse_dob(dob) when is_integer(dob), do: {:ok, dob}
+  defp parse_dob(_invalid), do: {:error "dob must be an integer"}
+
+  defp parse_name(nil), do: {:error, "name is required"}
+  defp parse_name(""), do: parse_name(nil)
+  defp parse_name(name), do: {:ok, name}
+end
+```
+
+
+
+
+
+
+
+## Advanced
+
+*
+[error-handling](https://medium.com/elixir-magic/making-error-handling-a-breeze-with-with-operator-in-elixir-1-2-93d611a878e)
+- use WITH and pattern matching to make railway oriented programming
+
+* https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-with.html
+* http://openmymind.net/Elixirs-With-Statement/
+
