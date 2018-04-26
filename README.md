@@ -1,6 +1,15 @@
 Elixir in a Team
 ================
 
+> "Any fool can write code that a computer can understand. Good programmers write code that humans can understand." — Martin Fowler
+
+Well, you just arrived in a company to work with Elixir, but wait, there are a
+lot of resources needed, behind coding! And the most important of all, is to
+learn to code for your team. People will need to read your code, typing is
+essential to leave your brain CPU resources focus on coding, instead of hunting
+letters, code-style, architecture, HTTP, git, linux, and much more.
+
+
 
 
 ## Introduction
@@ -19,6 +28,8 @@ Elixir in a Team
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
   * [pipes](references/elixir/PIPES.md) - many options on how to use them
+  TODO: * [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
+  TODO: * [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
 ### Phoenix
 
@@ -42,5 +53,11 @@ Elixir in a Team
   * [curl](references/http/CURL.md) - making http requests from the command line
   * [rest](references/http/REST.md) - basic and advanced concepts on building a
       REST API
+
+### Deploy
+  TODO: * [docker](references/docker/DOCKER.md) - building containers
+  TODO: * [kubernetes](references/kubernetes/KUBERNETES.md) - sending your app to the
+      cloud
+
 
 ## Labs
