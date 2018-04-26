@@ -28,8 +28,8 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
   * [pipes](references/elixir/PIPES.md) - many options on how to use them
-  TODO: * [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
-  TODO: * [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
+  * TODO: [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
+  * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
 ### Phoenix
 
@@ -55,8 +55,8 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
       REST API
 
 ### Deploy
-  TODO: * [docker](references/docker/DOCKER.md) - building containers
-  TODO: * [kubernetes](references/kubernetes/KUBERNETES.md) - sending your app to the
+  * TODO: [docker](references/docker/DOCKER.md) - building containers
+  * TODO: [kubernetes](references/kubernetes/KUBERNETES.md) - sending your app to the
       cloud
 
 
