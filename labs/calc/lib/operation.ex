@@ -5,6 +5,16 @@ defmodule Operation do
   on how to deal with structs.
   """
 
+  @typedoc "Fields of an operation data structure"
+  @type operation :: %Operation{
+    operation_type: String.t,
+    term1:          integer | float,
+    term2:          integer | float,
+    result:         integer | float,
+    calc_operator:  calc_operator
+  }
+  defstruct operation_type: nil, term1: nil, term2: nil, result: nil, calc_operator: nil
+
   @typedoc "the term that will receive an addition"
   @type term1 :: integer | float
 
@@ -19,22 +29,10 @@ defmodule Operation do
 
 
 
-  defstruct name: nil, term1: nil, term2: nil, result: nil, calc_operator: nil
 
-  @typedoc "Fields of an operation data structure"
-  @type operation :: %Operation{
-    name:           String.t,
-    term1:          integer | float,
-    term2:          integer | float,
-    result:         integer | float,
-    calc_operator:  calc_operator
-  }
-
-
-
-  @doc "add the operation name in our data structure"
-  @spec set_name(operation, String.t) :: operation
-  def set_name(operation, name), do: %{operation | name: name}
+  @doc "add the operation operation_type in our data structure"
+  @spec set_operation_type(operation, String.t) :: operation
+  def set_operation_type(operation, operation_type), do: %{operation | operation_type: operation_type}
 
   @doc "add the first term"
   @spec set_term1(operation, term1) :: operation
@@ -53,6 +51,10 @@ defmodule Operation do
   @spec set_calc_operator(operation, calc_operator) :: operation
   def set_calc_operator(operation, calc_operator) when is_function(calc_operator),
     do: %{operation | calc_operator: calc_operator}
+
+
+  @spec execute(operation) :: operation
+  def execute(op), do: %{op | result: op.calc_operator.(op.term1, op.term2)}
 end
 
 
