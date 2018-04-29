@@ -33,7 +33,7 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
   * [pipes](references/elixir/PIPES.md) - many options on how to use them
-  * TODO: [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
+  * [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
 ### Phoenix
@@ -52,6 +52,7 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
 ### Linux
   * [linux](references/linux/LINUX.md) - linux
   * [regex](references/linux/REGEX.md) - regex tutorial and references
+  * [vi](references/linux/VIM.md) - vi, the super hero editor
 
 ### HTTP
   * [http](references/http/HTTP.md) - hyper text transfer protocol introduction
