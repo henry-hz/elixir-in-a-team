@@ -82,6 +82,15 @@ power. See [here](https://www.slant.co/topics/362/~best-backend-web-frameworks)
 the comparison.
 
 
+## Future oriented
+
+Joe Armstrong, creator of Erlang, said something along the lines of: "In OO, if you ask a banana, you might receive a banana with the gorilla and the jungle". When we encapsulate data and behaviour in an object, we have no idea about what is going on there. Of course, one might argue that good OO design might solve this problem. I agree to a certain degree since normally you don't have control over third-party libraries. See [here](https://janjiss.com/the-way-of-modern-web/) for more details.
+
+
+
+
+
+
 ## Big and successful companies use Elixir
 See
 [here](https://codesync.global/media/successful-companies-using-elixir-and-erlang/)
