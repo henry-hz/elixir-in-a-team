@@ -13,10 +13,15 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
 
 
 ## Introduction
+
   * [introduction](introduction/INTRODUCTION.md) - some theory to start
   * [why-elixir](introduction/WHY_ELIXIR.md) - good reasons to adopt
   * [working-in-a-team](introduction/TEAM.md) - what is the approach on learning
       how to code for people
+  * [debugging](introduction/DEBUGGING.md) - debugging techniques for remote and
+      local environments
+  * [functional-programming](introduction/FUNCTIONAL_PROGRAMMING.md) -
+      introduction and basic principles for functional programming
 
 
 ## References
@@ -28,7 +33,7 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
   * [pipes](references/elixir/PIPES.md) - many options on how to use them
-  * TODO: [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
+  * [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
 ### Phoenix
@@ -47,6 +52,7 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
 ### Linux
   * [linux](references/linux/LINUX.md) - linux
   * [regex](references/linux/REGEX.md) - regex tutorial and references
+  * [vi](references/linux/VIM.md) - vi, the super hero editor
 
 ### HTTP
   * [http](references/http/HTTP.md) - hyper text transfer protocol introduction
@@ -61,3 +67,8 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
 
 
 ## Labs
+
+  * [calc](labs/calc) - simple calculations, using a datastructure to store every
+      step
+  * [ninety-nine](labs/ninety_nine) - different solutions for the
+      [99-functional-problems](http://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/) 

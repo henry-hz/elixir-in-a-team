@@ -31,7 +31,6 @@ const sumAllMultiples = limit => {
             sum += i;
         }
     }
-
     return sum;
 }
 
@@ -40,6 +39,7 @@ console.log(sumAllMultiples(1000));
 
 
 The same solution in Elixir
+
 ```elixir
 1..999 |> Enum.to_list
        |> Enum.filter(&(rem(&1, 3) == 0 or rem(&1, 5) == 0))
@@ -47,6 +47,26 @@ The same solution in Elixir
        |> IO.puts
 ```
 
+
+## Microservices in-the-box
+Instead of creating a new docker for every microservices, consuming tons of
+memory/CPU, and relying on external libs like
+[this](https://github.com/Netflix/conductor) made by Netflix, and other gigants,
+you can have all the power of microservice distribution with a "Visual Studio"
+monolith experience, with all the necessary tools in the box. If you are
+building a startup, for sure microservice architecture is the
+[wrong](https://hackernoon.com/if-youre-thinking-about-microservices-for-an-mvp-you-re-probably-doing-it-wrong-6fef8341fce4)
+option, but anyway, you feel and believe that in 2 years your new app will have
+some thousand of users, and you would like to be ready. So in Elixir you can
+start with the most simplicity (more than Java!), and have an in-the-box super
+scalability. The [cowboy](https://ninenines.eu) web-server is a dream server,
+think that every request receives its own process, in parallel... and you are
+done, a super simple nano-service architeture, ready to receive
+[millions](http://www.ostinelli.net/a-comparison-between-misultin-mochiweb-cowboy-nodejs-and-tornadoweb/)
+of requests. See 
+[here](http://tjheeta.github.io/2016/12/16/dawn-of-the-microlith-monoservices-microservices-with-elixir/)
+a deep comparison between the Elixir BEAM machine vs Standard Microservices
+architcture.
 
 
 ## Actor based concurrency model
