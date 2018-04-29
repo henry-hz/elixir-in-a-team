@@ -1,9 +1,10 @@
 defmodule P1 do
-  @defmodule """
+  @moduledoc """
   Find the last element of a list.
+  Example:
+    my_last(x,[a,b,c,d]).
+    x = d
   """
-
-
 
   @doc "pre-defined function"
   def find_last1(list), do: List.last(list)
@@ -11,13 +12,15 @@ defmodule P1 do
 
   @doc "using recursion"
   def find_last2([l]), do: l
-  def find_last2([h|t]),  do: find_last2(t)
+  def find_last2([_|t]),  do: find_last2(t)
+
 
   @doc "using pipe"
   def find_last3(list), do:
     list
       |> Enum.reverse
       |> List.first
+
 
   @doc "function composition"
   def find_last4(list),
@@ -27,10 +30,11 @@ defmodule P1 do
     fn list -> list |> Enum.reverse |> List.first end
 
 
-  # end
-  # def mul(a,b), do: a * b
-  # def mul2(a), do: mul(2,a)
-
+  @doc "using index"
+  def find_last5(list), do:
+    list
+      |> Enum.reverse
+      |> Enum.at(0)
 
 
 end
