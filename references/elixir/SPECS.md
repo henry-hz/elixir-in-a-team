@@ -13,10 +13,10 @@ below:
 - binary()
 - String.t
 
-Let's make the most simple example to show how comfortable is when we use the
-right names, specs and docs. 
-
-What do you prefer? this:
+Using specs, you will always know what type of data is getting into the
+function, and also, what type of data will be on the output. An amazing tool
+called dialyzer will make several tests automatically, to check the type
+consistency and much more.
 
 ```elixir
 defmodule Calc do
@@ -48,25 +48,6 @@ defmodule Calc do
   end
 end
 ```
-
-
-or this:
-
-```elixir
-defmodule ModuleM1 do
-
-  def fun(x, y) do
-    y + x
-  end
-
-end
-```
-
-We could say that the first example coulbe be called an over explanation, but
-imaging the module is making a business transaction, and we had no previous
-information about the terms, how to use it, what kind of result the function
-output 
-
 
 
 ## Advanced
