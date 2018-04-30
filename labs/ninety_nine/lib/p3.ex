@@ -7,9 +7,13 @@ defmodule P3 do
   X = c
   """
 
-  def element_at([], _), do: []
-  def element_at([h|_], 0), do: h
-  def element_at([h|t], index), do:
+  @doc "using pre-defined function [work with negative indexes also]"
+  def element_at(list, index), do: Enum.at(list, index)
+
+  @doc "using recursion [only with positive indexes]"
+  def element_at1([], _), do: []
+  def element_at1([h|_], 0), do: h
+  def element_at1([h|t], index), do:
     element_at(t, index - 1)
 
 
