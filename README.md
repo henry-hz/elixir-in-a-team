@@ -9,6 +9,16 @@ learn to code for your team. People will need to read your code, typing is
 essential to leave your brain CPU resources focus on coding, instead of hunting
 letters, code-style, architecture, HTTP, git, linux, and much more.
 
+But the most important issue: you take some vacations, and your co-workers will
+open and read/mantain your code... oho... what happens now ? can they understand
+something ? can they compile ? can they change some part of the code with safety,
+or they become afraid of touching it ? It's all about coding for
+others, and once you understand that well, for sure your approach in coding will be
+the correct one, and your code will be a real aggregated value for your company.
+
+An excelent reference for Elixir is in [Elixir
+School](https://elixirschool.com/en/). I added in this repo a lot of info on how
+to write code for you team, enjoy.
 
 
 
@@ -18,8 +28,6 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
   * [why-elixir](introduction/WHY_ELIXIR.md) - good reasons to adopt
   * [working-in-a-team](introduction/TEAM.md) - what is the approach on learning
       how to code for people
-  * [debugging](introduction/DEBUGGING.md) - debugging techniques for remote and
-      local environments
   * [functional-programming](introduction/FUNCTIONAL_PROGRAMMING.md) -
       introduction and basic principles for functional programming
 
@@ -29,6 +37,7 @@ letters, code-style, architecture, HTTP, git, linux, and much more.
 
 ### Elixir
 
+  * [documentation](references/elixir/DOCUMENTATION.md) - writing documentation
   * [specs](references/elixir/SPECS.md) - type specifications for your functions.
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings

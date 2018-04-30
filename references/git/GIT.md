@@ -1,6 +1,15 @@
 Git
 ===
 
+Read carefully [this](http://nvie.com/posts/a-successful-git-branching-model) article. Below, the main
+git flow for a large team. For small teams, using 'master' as the only origin
+should be okay, see
+[here](https://www.atlassian.com/git/tutorials/comparing-workflows) for more details.
+
+
+![](git-model.png)
+
+
 
 #### To see all your commits
 
