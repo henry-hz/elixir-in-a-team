@@ -52,6 +52,9 @@ to write code for you team, enjoy.
       controllers
   * [plug](references/phoenix/PLUG.md) - building components to http calls
 
+### GIT
+  * [git](references/git/GIT.md) - code repository to share code with a team
+
 
 ### Typing
 

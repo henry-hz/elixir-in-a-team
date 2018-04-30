@@ -75,16 +75,30 @@ You can add the file, or the complete directory recursivelly using '.'
 
 ```
 git add .
-`
+```
+
+#### To commit your files that you added to the track [with the command above]
+
+Write interesting messages on what you acomplished in this commit for your
+fellow co-workers. It will really help. Avoid: fix, fix1, fix2, add feature,
+etc...  The convention is to use the infinitive verb format, like: 
+
+* add query for clients
+* fix bug [#2323]
+* refactor bank service modules
 
 
+```
+git commit -m "my message here"
+```
 
 
+#### Push your code to the desired remote branch. 
 
+Supose you are working directly on 'master' branch:
 
-
-
-
-
+```
+git push origin master
+```
 
 
