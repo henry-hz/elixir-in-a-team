@@ -36,13 +36,13 @@ to write code for you team, enjoy.
 
 
 ### Elixir
-
-  * [documentation](references/elixir/DOCUMENTATION.md) - writing documentation
+  * [quick-reference](references/elixir/ELIXIR.md) - amazing quick reference.
   * [specs](references/elixir/SPECS.md) - type specifications for your functions.
   * [error-handling](references/elixir/ERROR_HANDLING.md) - many good strategies
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
   * [pipes](references/elixir/PIPES.md) - many options on how to use them
   * [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
+  * [documentation](references/elixir/DOCUMENTATION.md) - writing documentation
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
 ### Phoenix
