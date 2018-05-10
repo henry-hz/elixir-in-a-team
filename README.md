@@ -42,6 +42,8 @@ to write code for you team, enjoy.
   * [with](references/elixir/WITH.md) - pipelines using {:ok, res} and {:error, message} pattern matchings
   * [pipes](references/elixir/PIPES.md) - many options on how to use them
   * [debugging](references/DEBUGGING.md) - local and remote debugging techniques 
+  * [monitoring](references/elixir/MONITORING.md) - metrics collection,
+      application monitoring, tracing and profiling, and exception monitoring.
   * [documentation](references/elixir/DOCUMENTATION.md) - writing documentation
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
