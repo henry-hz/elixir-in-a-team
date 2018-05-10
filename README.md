@@ -57,6 +57,9 @@ to write code for you team, enjoy.
 ### GIT
   * [git](references/git/GIT.md) - code repository to share code with a team
 
+### Semiotics
+  * [overview](references/semiotics/SEMIOTICS.md) - it's all is about
+      communication
 
 ### Typing
 
