@@ -64,6 +64,9 @@ iex --name bob
 Node.connect(:"sally@Gregs-MacBook-Pro-2.wework.com")
 :observer.start()
 ```
+*
+[remote-observer-scripts](https://github.com/chazsconi/connect-remote-elixir-docker)
+- This script allows you to start a local IEx session and connect it to a remotely running Docker node.
 
 * [recon](https://github.com/ferd/recon) - collection of functions and scripts to debug Erlang in production
 * [observer-cli](https://github.com/zhongwencool/observer_cli) - like the
@@ -71,3 +74,7 @@ Node.connect(:"sally@Gregs-MacBook-Pro-2.wework.com")
 *
 [observer-remotely](https://sgeos.github.io/elixir/erlang/observer/2016/09/16/elixir_erlang_running_otp_observer_remotely.html)
 - use the graphical observer connected to a remote node
+
+
+* [beam-without-epmd](https://www.erlang-solutions.com/blog/erlang-and-elixir-distribution-without-epmd.html)
+- Erlang (and Elixir) distribution without epmd
