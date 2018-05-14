@@ -61,6 +61,9 @@ to write code for you team, enjoy.
   * [overview](references/semiotics/SEMIOTICS.md) - it's all is about
       communication
 
+### Postgres
+  * [postgres](references/postgres/POSTGRES.md) - Tutorials, tips, etc...
+
 ### Typing
 
   * [typing](references/typing/TYPING.md) - finger positions and links
