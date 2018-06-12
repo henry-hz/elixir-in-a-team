@@ -72,7 +72,7 @@ Let's rewrite our code:
 defmodule User do
   defstruct name: nil, dob: nil
 	def create(params) do
-		with {:ok, dob} <- parse_dob(params["dob"]),
+	  with {:ok, dob} <- parse_dob(params["dob"]),
 				 {:ok, name} <- parse_name(params["name"])
 		do
 			%User{dob: dob, name: name}

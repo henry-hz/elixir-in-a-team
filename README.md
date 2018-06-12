@@ -45,6 +45,7 @@ to write code for you team, enjoy.
   * [monitoring](references/elixir/MONITORING.md) - metrics collection,
       application monitoring, tracing and profiling, and exception monitoring.
   * [documentation](references/elixir/DOCUMENTATION.md) - writing documentation
+  * [pattern-matching](references/elixir/PATTERN-MATCHING.md) - big advantages !
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
 ### Phoenix
