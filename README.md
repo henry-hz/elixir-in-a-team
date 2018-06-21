@@ -48,12 +48,16 @@ to write code for you team, enjoy.
   * [pattern-matching](references/elixir/PATTERN-MATCHING.md) - big advantages !
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
 
-### Phoenix
+### Phoenix / Ecto
 
   * [conn](references/phoenix/CONN.md) - http data structure
   * [controllers](references/phoenix/CONTROLLERS.md) - design patterns in
       controllers
   * [plug](references/phoenix/PLUG.md) - building components to http calls
+  * [multi](references/phoenix/ecto/MULTI.md) - multi with examples on cross
+  * [migrations](references/phoenix/ecto/MIGRATIONS.md) - migrations cheat sheet
+
+  
 
 ### GIT
   * [git](references/git/GIT.md) - code repository to share code with a team

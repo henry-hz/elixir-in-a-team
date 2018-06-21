@@ -157,6 +157,34 @@ end
 ```
 
 
+Note that probably, you will be using multi for a inter context communication.
+Specially if your context is a process flow. This is something beautiful about
+contexts, you can have static and granulated ones, and aftewards, isolate your
+flows in new contexts.  
+
+Read the [context](https://hexdocs.pm/phoenix/contexts.html) manual, and see:
+Supose you have a CMS and Account granulated contexts, and a REGISTRATION flow, 
+so instead of using a high coupled query, create a registration context to
+handle them:
+
+
+```
+defmodule Hello.UserRegistration do
+  alias Ecto.Multi
+  alias Hello.{Accounts, CMS}
+
+  def register_user(params) do
+    Multi.new()
+    |> Multi.run(:user, fn _ -> Accounts.create_user(params) end)
+    |> Multi.run(:author, fn %{user: user} ->
+      {:ok, CMS.ensure_author_exists(user)}
+    end)
+    |> Repo.transaction()
+  end
+end
+
+```
+
 
 
 ## Advanced
