@@ -47,6 +47,7 @@ to write code for you team, enjoy.
   * [documentation](references/elixir/DOCUMENTATION.md) - writing documentation
   * [pattern-matching](references/elixir/PATTERN-MATCHING.md) - big advantages !
   * TODO: [boilerplate](references/BOILERPLATE.md) - essential dependencies: ex_doc, dialyzer, sentry, docker, etc... 
+  * TODO: http://www.jeramysingleton.com/phoenix-templates-are-just-functions/
 
 ### Phoenix / Ecto
 
