@@ -12,9 +12,9 @@ defmodule P3 do
 
   @doc "using recursion [only with positive indexes]"
   def element_at1([], _), do: []
-  def element_at1([h|_], 0), do: h
+  def element_at1([h|_], 1), do: h
   def element_at1([h|t], index), do:
-    element_at(t, index - 1)
+    element_at1(t, index - 1)
 
 
 end
